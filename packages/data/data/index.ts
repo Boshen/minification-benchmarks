@@ -19,6 +19,13 @@ export const saveData = async (
 	if (minifiersSort) {
 		for (const artifact of Object.values(sortedData)) {
 			artifact.minified = sortObjectKeys(artifact.minified, sortMinifiers);
+			delete artifact.minified["uglify-js"]
+			delete artifact.minified["google-closure-compiler"]
+			delete artifact.minified["babel-minify"]
+			delete artifact.minified["uglify-js (no compress)"]
+			delete artifact.minified["bun"]
+			delete artifact.minified["terser (no compress)"]
+			delete artifact.minified["tedivm/jshrink"]
 		}
 	}
 

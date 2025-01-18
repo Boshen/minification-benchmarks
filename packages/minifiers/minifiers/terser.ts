@@ -14,18 +14,6 @@ export default createMinifier(
 			});
 
 			return minified.code!;
-		},
-		'no compress': async ({ code }) => {
-			const minified = await minify(code, {
-				ecma: 2018,
-				sourceMap: false,
-				output: {
-					comments: false,
-				},
-				compress: false,
-			});
-
-			return minified.code!;
-		},
+		}
 	},
 );
